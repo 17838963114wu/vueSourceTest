@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testVue</title>
+    <script src="./vue.js"></script>
+    <script src="./Mvue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <h2>{{message}}</h2>
+        <h3>{{message}}</h3>
+        <h4>{{message}}</h4>
+        <ul>
+            <li>{{arr[0]}}</li>
+            <li>{{arr[1]}}</li>
+        </ul>
+    </div>
+
+    <script>
+        new Mvue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!',
+                arr:["34","455"]
+            }
+        })
+    </script>
+</body>
+</html>
