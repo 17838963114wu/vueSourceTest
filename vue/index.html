@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>testVue</title>
-    <script src="./vue.js"></script>
+    <!-- <script src="./vue.js"></script> -->
+    <script src="./Observer.js"></script>
     <script src="./Mvue.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-        <h1>{{message}}</h1>
-        <h2>{{message}}</h2>
-        <h3>{{message}}</h3>
-        <h4>{{message}}</h4>
-        <ul> 
-            <li>{{arr[0]}}</li>
-            <li>{{arr[1]}}</li>
-        </ul>
+      <h1>{{message}}</h1>
+      <h2>{{message}}</h2>
+      <h3>{{message}}</h3>
+      <h4>{{message}}</h4>
+      <ul>
+        <li>
+          <input v-model="inputVal" />
+        </li>
+        <li>{{inputVal}}</li>
+      </ul>
+      <h5 v-text="textMsg"></h5>
+      <h6 v-html="htmlStr"></h6>
+      <button v-on:click="clickEvent">点击事件</button>
     </div>
     <script>
-        new Mvue({
-            el: '#app',
-            data: {
-                message: 'Hello Vue.js!',
-                arr:["34","455"]
-            }
-        })
+      new Mvue({
+        el: "#app",
+        data: {
+          message: "Hello Vue.js!",
+          textMsg: "textmsg",
+          inputVal: "22222222",
+          arr: ["34", "455"],
+          htmlStr: "<span>597777777777</span>",
+        },
+        methods: {
+          clickEvent() {
+            this.$data.htmlStr = "<span>5555588</span>";
+            this.$data.textMsg = "modify textMsg";
+            this.$data.inputVal = "4888888888888";
+          },
+        },
+      });
     </script>
-</body>
+  </body>
 </html>
