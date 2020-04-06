@@ -17,6 +17,14 @@ class Observer {
     this.observe(value);
     const dep = new Dep();
     // 劫持并且监听所有的属性
+    // console.log("劫持对象", obj);
+    // console.log("劫持属性", key);
+    /*
+    接受三个参数
+    1 object 对象 => 给谁加
+    2 propName 属性名 => 要加的属性的名字 【类型：String】
+    3 descriptor 属性描述 => 加的这个属性有什么样的特性【类型：Object】
+    */
     Object.defineProperty(obj, key, {
       enumerable: true,
       configurable: false,
